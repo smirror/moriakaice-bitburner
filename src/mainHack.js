@@ -131,7 +131,7 @@ function findTargetServer(ns, serversList, servers, serverExtraData) {
       fullHackCycles,
     }
 
-    const serverValue = servers[hostname].maxMoney * (settings.minSecurityWeight / (servers[hostname].minSecurityLevel + ns.getServerSecurityLevel(hostname)))
+    const serverValue = servers[hostname].maxMoney * (settings.minSecurityWeight / (servers[hostname].minSecurityLevel + ns.getServerSecurityLevel(hostname))) / ns.getWeakenTime(hostname)
 
     return {
       hostname,
